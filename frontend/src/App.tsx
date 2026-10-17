@@ -39,7 +39,7 @@ export default function App() {
         <Route path="/skills/technical" element={guard(<TechnicalSkills />)} />
         <Route path="/practice" element={guard(<Practice />)} />
         <Route path="/practice/drill/:id" element={guard(<DrillPage />)} />
-        <Route path="/pricing" element={guard(<Pricing />)} />
+        <Route path="/pricing" element={<Navigate to="/dashboard" replace />} />
         <Route path="/payment/success" element={guard(<PaymentSuccess />)} />
         <Route path="/payment/cancel" element={guard(<PaymentCancel />)} />
         <Route path="/profile" element={guard(<Profile />)} />

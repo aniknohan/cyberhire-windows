@@ -52,20 +52,8 @@
       </section>
 
       <section>
-        <h2>Plan &amp; billing</h2>
-        <label class="check"><input id="localPro" type="checkbox" /> <span><b>Unlock Pro for every account on this computer</b><br /><span class="hint">No trial limit: interviews, drills and resume upload always available. Turn this off only if you want the 3-day trial and Stripe / PayPal checkout.</span></span></label>
-        <div id="billing">
-          <label for="stripeSecretKey">Stripe secret key</label>
-          <input id="stripeSecretKey" type="password" placeholder="sk_live_... or sk_test_..." autocomplete="off" />
-          <label for="stripeWebhookSecret">Stripe webhook secret <span style="color:var(--muted);font-weight:400">(optional)</span></label>
-          <input id="stripeWebhookSecret" type="password" placeholder="whsec_..." autocomplete="off" />
-          <label for="paypalClientId">PayPal client ID <span style="color:var(--muted);font-weight:400">(optional)</span></label>
-          <input id="paypalClientId" type="text" autocomplete="off" />
-          <label for="paypalSecret">PayPal secret</label>
-          <input id="paypalSecret" type="password" autocomplete="off" />
-          <label for="paypalMode">PayPal mode</label>
-          <select id="paypalMode"><option value="sandbox">Sandbox</option><option value="live">Live</option></select>
-        </div>
+        <h2>Free to use</h2>
+        <div class="hint">CyberHire is free. Every feature is unlocked. You only pay OpenAI / Anthropic directly for what your own key uses (a few cents per interview).</div>
       </section>
 
       <section>
@@ -79,17 +67,13 @@
 
     <script>
       const $ = (id) => document.getElementById(id);
-      const fields = ["openaiKey", "anthropicKey", "stripeSecretKey", "stripeWebhookSecret", "paypalClientId", "paypalSecret", "paypalMode"];
-      const syncBilling = () => ($("billing").style.display = $("localPro").checked ? "none" : "block");
+      const fields = ["openaiKey", "anthropicKey"];
 
       window.settingsApi.get().then((s) => {
         for (const f of fields) $(f).value = s[f] || "";
-        $("localPro").checked = !!s.localPro;
         $("dataDir").textContent = s.dataDir;
         $("ver").textContent = "Version " + s.version;
-        syncBilling();
       });
-      $("localPro").addEventListener("change", syncBilling);
 
       document.querySelectorAll("[data-test]").forEach((btn) =>
         btn.addEventListener("click", async () => {
@@ -116,7 +100,7 @@
       );
       $("cancel").addEventListener("click", () => window.close());
       $("save").addEventListener("click", async () => {
-        const out = { localPro: $("localPro").checked };
+        const out = {};
         for (const f of fields) out[f] = $(f).value.trim();
         if (!out.openaiKey && !out.anthropicKey && !confirm("No AI key entered — interviews won't work until you add one. Save anyway?")) return;
         $("save").disabled = true;

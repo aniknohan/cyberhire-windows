@@ -325,7 +325,7 @@ img.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit:
 <header class="top" id="topbar"><div class="wrap">
   <button class="brand" data-go="dashboard" type="button"><span class="logo"><svg class="i" viewBox="0 0 24 24" style="color:#fff;width:17px;height:17px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>CyberHire</button>
   <nav class="nav" id="nav"></nav>
-  <div class="right"><span class="badge-trial hide-sm">PRO</span><button class="btn sm" data-go="setup" type="button"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>New interview</button><span class="who hide-sm" id="whoName"></span><button class="iconbtn" data-go="settings" type="button" aria-label="Settings" title="Settings"><svg class="i" viewBox="0 0 24 24" style="width:19px;height:19px"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></div>
+  <div class="right"><span class="badge-trial hide-sm" title="Free. Uses your own API key">FREE</span><button class="btn sm" data-go="setup" type="button"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>New interview</button><span class="who hide-sm" id="whoName"></span><button class="iconbtn" data-go="settings" type="button" aria-label="Settings" title="Settings"><svg class="i" viewBox="0 0 24 24" style="width:19px;height:19px"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></div>
 </div></header>
 <div id="app"></div>
 <nav class="bnav" id="bnav"></nav>
@@ -1324,7 +1324,7 @@ function vSettings(app) {
     <div class="card pad" style="display:grid;gap:10px"><span class="label">Your data</span>
       <p class="muted" style="font-size:14px">Interviews, reports and practice are saved only on this phone (${Object.keys(Store.ivs).length} interviews). Uninstalling the app deletes them.</p>
       <div><button class="btn ghost" id="wipe" type="button" style="color:var(--bad)">Delete all interviews</button></div></div>
-    <p class="dim" style="font-size:12px">CyberHire for Android · version 1.0.0</p></div>`;
+    <p class="dim" style="font-size:12px">CyberHire for Android · version 1.0.1</p></div>`;
   const test = async (which, input, status) => {
     const key = ($(input).value || "").trim() || (which === "openai" ? Keys.openai : Keys.anthropic);
     const st = $(status); if (!key) { st.textContent = "Enter a key first."; st.style.color = "var(--bad)"; return; }

@@ -117,7 +117,7 @@ function backendEnv(s) {
     DB_NAME: "soc_interview_simulator",
     OPENAI_API_KEY: (s.openaiKey || "").trim(),
     ANTHROPIC_API_KEY: (s.anthropicKey || "").trim(),
-    SOC_LOCAL_PRO: s.localPro ? "1" : "0",
+    SOC_LOCAL_PRO: "1", // CyberHire is free: every feature unlocked
     ADMIN_EMAIL: s.adminEmail || DEFAULTS.adminEmail,
     ADMIN_PASSWORD: s.adminPassword || DEFAULTS.adminPassword,
     PYTHONUNBUFFERED: "1",
@@ -430,7 +430,7 @@ ipcMain.handle("settings:save", async (_e, incoming) => {
   const allowed = Object.keys(DEFAULTS);
   const next = { ...cur };
   for (const k of allowed) if (k in incoming) next[k] = incoming[k];
-  next.localPro = Boolean(next.localPro);
+  next.localPro = true;
   writeSettings(next);
   if (settingsWindow && !settingsWindow.isDestroyed()) settingsWindow.close();
   await restartBackend();

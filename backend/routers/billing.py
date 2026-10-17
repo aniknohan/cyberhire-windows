@@ -42,8 +42,8 @@ def trial_until(user: dict) -> datetime | None:
 
 
 def local_pro() -> bool:
-    """Desktop app: every account on this computer gets Pro unless billing is switched on in Settings."""
-    return os.environ.get("SOC_LOCAL_PRO", "1") == "1"
+    """CyberHire desktop is free: every account on this computer has every feature."""
+    return True
 
 
 def is_paid_pro(user: dict) -> bool:

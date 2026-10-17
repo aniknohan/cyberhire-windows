@@ -1,6 +1,6 @@
 {
   "name": "cyberhire-android",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "CyberHire — standalone Android app (runs on the phone with your own OpenAI / Anthropic key).",
   "dependencies": {
