@@ -1,0 +1,10 @@
+{
+  "appId": "com.cyberhire.mobile",
+  "appName": "CyberHire",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#0a0e17",
+    "allowMixedContent": false,
+    "adjustMarginsForEdgeToEdge": "force"
+  }
+}
