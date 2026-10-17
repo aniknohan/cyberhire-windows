@@ -87,8 +87,19 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: cyberhire-windows-${{ github.run_number }}
-          name: CyberHire for Windows (build ${{ github.run_number }})
+          name: CyberHire ${{ github.run_number }} (Windows + Android)
+          make_latest: true
           body: |
-            **Windows:** download `CyberHire-Setup-*.exe` and run it, or the `Portable` `.exe` (no install needed).
-            The whole app runs on your PC — no website needed. On first start, add your OpenAI API key in the Settings window.
+            **CyberHire is free.** Use your own OpenAI (or Anthropic) API key; setup steps are in the README.
+            - **Windows:** `CyberHire-Setup-*.exe` (installs) or `CyberHire-Portable-*.exe` (no install).
+            - **Android:** `CyberHire-Android.apk`.
           files: out/windows-installer/*.exe
+      - name: Add the newest Android APK
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          tag=$(gh release list --limit 30 --json tagName -q '.[].tagName' | grep '^android-' | head -1)
+          [ -n "$tag" ] && gh release download "$tag" -p CyberHire.apk -O CyberHire-Android.apk && \
+            gh release upload "cyberhire-windows-${{ github.run_number }}" CyberHire-Android.apk --clobber

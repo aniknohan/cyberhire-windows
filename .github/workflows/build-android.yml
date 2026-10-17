@@ -64,4 +64,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "android-${{ github.run_number }}" CyberHire.apk --title "CyberHire for Android (build ${{ github.run_number }})" --notes "Install CyberHire.apk on your phone. Runs on the phone with your own OpenAI key."
+          gh release create "android-${{ github.run_number }}" CyberHire.apk --latest=false --title "CyberHire for Android only (build ${{ github.run_number }})" --notes "Install CyberHire.apk on your phone. Free. Uses your own OpenAI key."
+          # also put it next to the Windows downloads on the main release
+          win=$(gh release list --limit 30 --json tagName -q '.[].tagName' | grep '^cyberhire-windows-' | head -1)
+          if [ -n "$win" ]; then cp CyberHire.apk CyberHire-Android.apk; gh release upload "$win" CyberHire-Android.apk --clobber; fi
