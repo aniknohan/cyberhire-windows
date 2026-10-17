@@ -1,0 +1,502 @@
+[
+{
+"section": "Python Fundamentals & Security Data",
+"n": 1,
+"text": "How comfortable are you with Python, and how have you used it in cybersecurity?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 2,
+"text": "Why is Python useful for a SOC analyst?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 3,
+"text": "Why is Python useful for a penetration tester?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 4,
+"text": "Tell me about a Python security script you've written."
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 5,
+"text": "If I gave you a large log file, how would you use Python to analyze it?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 6,
+"text": "How would you extract all IP addresses from a log file using Python?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 7,
+"text": "How would you identify the most frequently occurring source IPs in a log?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 8,
+"text": "How would you search thousands of log entries for failed authentication attempts?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 9,
+"text": "How would you use Python to identify an IP generating an unusually high number of failed logins?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 10,
+"text": "How would you correlate successful and failed login events with Python?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 11,
+"text": "How would you read a CSV file containing security events?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 12,
+"text": "How would you parse JSON returned by a security API?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 13,
+"text": "What's the difference between a Python list, tuple, set, and dictionary?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 14,
+"text": "Why are dictionaries particularly useful when processing security data?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 15,
+"text": "Explain a Python for loop using a cybersecurity example."
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 16,
+"text": "When would you use a while loop?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 17,
+"text": "How do if, elif, and else statements help when analyzing alerts?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 18,
+"text": "How do you handle exceptions in Python?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 19,
+"text": "Why is error handling important in security automation?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 20,
+"text": "How would you safely handle API keys or credentials in a Python script?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 21,
+"text": "What are environment variables, and why might you use them for secrets?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 22,
+"text": "What is a Python module?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 23,
+"text": "Which Python libraries have you used for cybersecurity tasks?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 24,
+"text": "How have you used the requests library?"
+},
+{
+"section": "Python Fundamentals & Security Data",
+"n": 25,
+"text": "How would you query a REST API with Python?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 26,
+"text": "How would you submit an IP address or file hash to a threat-intelligence API?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 27,
+"text": "Suppose you have 500 suspicious IP addresses. How would you automate reputation checks?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 28,
+"text": "How would you handle API rate limits?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 29,
+"text": "How would you extract domains, URLs, IP addresses, and hashes from security logs?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 30,
+"text": "When would you use regular expressions during an investigation?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 31,
+"text": "Write or describe a regex that could help identify IPv4 addresses."
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 32,
+"text": "How would you automate IOC extraction from a phishing email?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 33,
+"text": "How would you parse email headers using Python?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 34,
+"text": "How could Python help investigate phishing campaigns?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 35,
+"text": "How would you calculate the SHA-256 hash of a suspicious file using Python?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 36,
+"text": "Why would a SOC analyst calculate file hashes?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 37,
+"text": "How could you compare observed hashes against a known IOC list?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 38,
+"text": "How would you remove duplicate IOCs from a large dataset?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 39,
+"text": "How would you normalize security data coming from multiple sources?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 40,
+"text": "How would you convert timestamps from different log sources into a common format?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 41,
+"text": "How would you use Python to detect repeated authentication failures?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 42,
+"text": "How could you identify password-spraying patterns using Python?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 43,
+"text": "How could you identify possible brute-force activity from authentication logs?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 44,
+"text": "How would you identify suspicious outbound connections from network logs?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 45,
+"text": "How could Python help identify beaconing behavior?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 46,
+"text": "How would you compare two lists of IP addresses and find matches?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 47,
+"text": "How could you automate enrichment of SIEM alerts?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 48,
+"text": "How could Python interact with a SIEM API?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 49,
+"text": "How could Python interact with an EDR API?"
+},
+{
+"section": "Threat Intelligence, IOCs & SOC Automation",
+"n": 50,
+"text": "How could you automatically generate an investigation report from collected evidence?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 51,
+"text": "How could a penetration tester use Python during reconnaissance?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 52,
+"text": "How could you automate subdomain or host processing with Python?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 53,
+"text": "How would you check whether multiple hosts have a particular TCP port open?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 54,
+"text": "What is Python's socket module used for?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 55,
+"text": "How would you create a basic TCP client in Python?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 56,
+"text": "What's the difference between a socket timeout and a connection refusal?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 57,
+"text": "How would you safely automate repetitive enumeration tasks during an authorized penetration test?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 58,
+"text": "How could Python process Nmap output?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 59,
+"text": "How could you extract interesting services from Nmap XML results?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 60,
+"text": "How would you automate HTTP requests against multiple authorized web endpoints?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 61,
+"text": "How would you manage sessions and cookies using Python's requests library?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 62,
+"text": "How could Python help test API authentication and authorization?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 63,
+"text": "How would you compare API responses from two different user accounts?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 64,
+"text": "How would you identify unusual differences between hundreds of HTTP responses?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 65,
+"text": "How could Python help with Active Directory or Windows security analysis?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 66,
+"text": "How could Python help analyze Windows Event Logs after they've been exported?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 67,
+"text": "How would you process a large dataset without loading everything into memory?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 68,
+"text": "What's a generator in Python, and why might it be useful when analyzing huge log files?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 69,
+"text": "What is multithreading, and when might it help a cybersecurity script?"
+},
+{
+"section": "Penetration Testing, Networking & API Analysis",
+"n": 70,
+"text": "What's the danger of adding concurrency to a security-testing script?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 71,
+"text": "What's the difference between encoding, encryption, and hashing?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 72,
+"text": "How would you Base64-decode suspicious data using Python?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 73,
+"text": "Why might Base64 appear in malicious PowerShell or phishing investigations?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 74,
+"text": "How would you safely analyze encoded or obfuscated strings without executing them?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 75,
+"text": "How would you use Python to identify potentially suspicious PowerShell commands in logs?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 76,
+"text": "How would you build a simple IOC scanner in Python?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 77,
+"text": "How would you design a script that accepts a log file as a command-line argument?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 78,
+"text": "What is argparse, and why is it useful?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 79,
+"text": "How would you log your own script's activity and errors?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 80,
+"text": "How would you make a cybersecurity automation script reliable enough for other analysts to use?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 81,
+"text": "Suppose your script works on your laptop but fails on the SOC server. How would you troubleshoot it?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 82,
+"text": "Your Python script receives HTTP 429 responses from a threat-intelligence API. What's happening?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 83,
+"text": "Your API returns HTTP 401. What would you investigate?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 84,
+"text": "Your API returns HTTP 403. How is that different from 401?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 85,
+"text": "Your script suddenly starts returning empty JSON responses. How would you troubleshoot it?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 86,
+"text": "A log-processing script takes 45 minutes to process a 10 GB file. How would you improve it?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 87,
+"text": "Your IOC-enrichment script labels a legitimate IP as malicious. How would you prevent automation from causing bad response actions?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 88,
+"text": "Would you allow a Python script to automatically isolate an endpoint based on one detection? Why or why not?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 89,
+"text": "How would you build human approval into an automated incident-response workflow?"
+},
+{
+"section": "Encoding, Automation Safety & Troubleshooting",
+"n": 90,
+"text": "How would you test a security automation script before deploying it in production?"
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 91,
+"text": "Describe a Python script that could make a Tier 1 SOC analyst's job easier."
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 92,
+"text": "Design a script that receives an IP address and returns useful investigation information."
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 93,
+"text": "Design a script that takes authentication logs and identifies suspicious login behavior."
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 94,
+"text": "Design a script that extracts IOCs from a suspicious email and enriches them automatically."
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 95,
+"text": "Design a script that takes a file hash and checks multiple threat-intelligence sources."
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 96,
+"text": "Design a Python workflow for automatically enriching SIEM alerts before an analyst receives them."
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 97,
+"text": "You're given one million firewall events. Explain how you'd use Python to identify potentially suspicious activity."
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 98,
+"text": "During a penetration test, you have results from several different tools. How would you use Python to combine and normalize them?"
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 99,
+"text": "You're investigating an incident involving 200 endpoints. How could Python reduce the amount of repetitive manual work?"
+},
+{
+"section": "Practical Cybersecurity Automation Scenarios",
+"n": 100,
+"text": "You work in a SOC and receive thousands of security events per day. Design a Python-based automation workflow that collects alerts, extracts IOCs, enriches IPs/domains/hashes, assigns risk scores, removes duplicates, correlates related activity, and presents the analyst with useful evidence while ensuring the automation cannot accidentally take dangerous response actions."
+}
+]

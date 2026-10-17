@@ -1,0 +1,93 @@
+name: Build CyberHire for Windows
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    name: Windows installer (.exe)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bundle interviewer photos into the app
+        continue-on-error: true
+        run: python scripts/bundle_images.py
+
+      - name: Build the app screens (React)
+        working-directory: frontend
+        run: |
+          npx --yes yarn@1.22.22 install --network-timeout 600000
+          npx --yes yarn@1.22.22 build
+
+      - name: Build the local interview engine (Python → soc-backend.exe)
+        working-directory: backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-desktop.txt pyinstaller==6.11.1
+          pyinstaller --noconfirm soc-backend.spec
+
+      - name: Check the engine starts
+        shell: pwsh
+        run: |
+          $env:SOC_DATA_DIR = "$env:RUNNER_TEMP\socdata"
+          $p = Start-Process -FilePath backend\dist\soc-backend\soc-backend.exe -ArgumentList "--port","47821","--frontend","$PWD\frontend\dist" -PassThru -NoNewWindow -RedirectStandardOutput "$env:RUNNER_TEMP\out.log" -RedirectStandardError "$env:RUNNER_TEMP\err.log"
+          $ok = $false
+          for ($i = 0; $i -lt 60; $i++) {
+            Start-Sleep -Seconds 1
+            try { $r = Invoke-WebRequest -UseBasicParsing http://127.0.0.1:47821/api/; if ($r.StatusCode -eq 200) { $ok = $true; break } } catch {}
+          }
+          if ($ok) {
+            $s = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+            $body = '{"email":"ci@test.com","password":"Passw0rd!","name":"CI","target_role":"SOC Analyst L1","experience_level":"Entry Level"}'
+            Invoke-WebRequest -UseBasicParsing -WebSession $s -Method Post -ContentType "application/json" -Body $body http://127.0.0.1:47821/api/auth/register | Out-Null
+            Invoke-WebRequest -UseBasicParsing -WebSession $s http://127.0.0.1:47821/api/auth/me | Out-Null
+            $home_ = Invoke-WebRequest -UseBasicParsing http://127.0.0.1:47821/
+            if ($home_.Content -notmatch 'id="root"') { $ok = $false }
+          }
+          Stop-Process -Id $p.Id -Force
+          Get-Content "$env:RUNNER_TEMP\out.log","$env:RUNNER_TEMP\err.log" -ErrorAction SilentlyContinue | Select-Object -Last 40
+          if (-not $ok) { throw "backend smoke test failed" }
+
+      - name: Package Windows installer
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+        run: |
+          npm install --no-audit --no-fund
+          npx electron-builder --win --publish never
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: dist/*.exe
+          if-no-files-found: error
+
+  release:
+    name: Publish download page
+    needs: [windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: cyberhire-windows-${{ github.run_number }}
+          name: CyberHire for Windows (build ${{ github.run_number }})
+          body: |
+            **Windows:** download `CyberHire-Setup-*.exe` and run it, or the `Portable` `.exe` (no install needed).
+            The whole app runs on your PC — no website needed. On first start, add your OpenAI API key in the Settings window.
+          files: out/windows-installer/*.exe
