@@ -1,0 +1,3 @@
+android-app/www/** linguist-generated
+soc_interview_simulator.html linguist-generated
+*.html linguist-detectable=false
