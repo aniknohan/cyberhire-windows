@@ -1,50 +1,64 @@
-# CyberHire — Windows desktop app (not web-based)
+# CyberHire: free AI interview simulator for Windows and Android
 
-This is your CyberHire app — same screens, interviewers (SOC and Penetration Tester tracks), Technical focus
-(Splunk, Wireshark, Nmap, Active Directory, Python), rounds, scoring, reports, drills, coach mode and admin tools —
-packaged as a **standalone Windows app**. Nothing is hosted online:
+**CyberHire is free.** There are no subscriptions, no trial and no account with us. Every feature is unlocked.
+You bring your own AI key (OpenAI and/or Anthropic) and pay the AI company directly for what you use,
+usually a few cents per interview. Your key and your data stay on your own computer or phone.
 
-- The app's own engine (`soc-backend.exe`) runs inside the app on your PC and serves the screens.
-- Accounts, interviews, reports, drills and answer recordings are saved on your PC in
-  `%APPDATA%\CyberHire` (App menu → *Open data folder*).
-- Interviewer photos are built into the app.
-- The only internet use is the AI itself: the interviewer brain (Claude Sonnet 4.5 → GPT-5.2 fallback),
-  interviewer voices and speech recognition, called directly with **your own API keys**.
+Practice realistic cybersecurity job interviews with AI interviewers. You get the HR, technical, SOC investigation
+and hiring manager rounds, spoken questions and voice answers, scoring and reports, drills and coach mode.
 
-## What changed compared with the website
-| Website | Windows app |
+## Download
+
+Go to **[Releases](https://github.com/aniknohan/cyberhire-windows/releases)** and pick:
+
+| Device | File |
 |---|---|
-| MongoDB server | Built-in local database file (no install) |
-| Emergent universal LLM key | Your OpenAI key (required) + Anthropic key (optional) — entered in **App → Settings & API keys** |
-| 3-day trial, then $19.99/month or $159/year | Pro unlocked for every account on the PC (toggle in Settings to bring back the trial + Stripe/PayPal) |
-| Your question banks | Same banks, with 96 repeated questions removed from the SOC and tools/Python banks (`backend/data/removed_duplicates.json`); the penetration tester bank is unchanged |
-| Everything else | Identical — same React screens and same Python backend code |
+| Windows (installs with Start menu + desktop shortcut) | `CyberHire-Setup-<version>.exe` |
+| Windows (no install, just run it) | `CyberHire-Portable-<version>.exe` |
+| Android phone | `CyberHire.apk` (from the newest **CyberHire for Android** release) |
 
-## Get the .exe — option A: GitHub (free, no installs on your PC, ~15 min)
-1. Create a free account at github.com → **+** → **New repository** → name it → **Private** → **Create**.
-2. Click **uploading an existing file** and drag **everything inside this folder** in (include the hidden
-   `.github` folder: File Explorer → View → Show → Hidden items). **Commit changes**.
-3. Open the **Actions** tab (enable Actions if asked). *Build CyberHire for Windows* runs by itself (~10–15 min).
-4. When it's green, open **Releases** on the repository page and download:
-   - `CyberHire-Setup-1.0.0.exe` — installer (Start menu + desktop shortcut)
-   - `CyberHire-Portable-1.0.0.exe` — runs without installing
+iPhone / iPad are not supported.
 
-If `.github` didn't upload: Actions → *set up a workflow yourself* → paste `.github/workflows/build-windows.yml` → Commit.
+## Get an AI key (needed once)
 
-## Get the .exe — option B: build on your own Windows PC
-1. Install **Node.js 22 LTS** (nodejs.org) and **Python 3.12** (python.org — tick *Add python.exe to PATH*).
-2. Double-click `build-windows.bat`. The installers appear in the `dist` folder.
+| Key | What it gives you |
+|---|---|
+| **OpenAI**, recommended | Everything: interviewer, scoring, realistic interviewer voices, answering out loud, pronunciation and pace scores |
+| **Anthropic** (Claude), optional | Interviewer and scoring run on Claude Sonnet 4.5. Voice features still need an OpenAI key. |
 
-## First start
-1. Run the installer. If Windows shows "Windows protected your PC": **More info → Run anyway** (the app isn't code-signed).
-2. The Settings window opens: paste your **OpenAI API key** (platform.openai.com/api-keys), optionally your
-   **Anthropic API key**, press **Test**, then **Save & restart engine**.
-3. Sign up (or log in as admin: `admin@socsim.com` / `Admin@123`) and start an interview.
-4. Camera/mic not working? Windows **Settings → Privacy & security → Camera** and **Microphone** →
-   turn on "Let desktop apps access…".
+**OpenAI:** sign in at [platform.openai.com](https://platform.openai.com) → **Settings → Billing** → add credit ($5 is enough for many
+interviews) → **API keys** → **Create new secret key** → copy it. A ChatGPT Plus subscription is *not* the same thing; the API
+needs its own credit.
 
-## Folder layout
-- `frontend/` – the React app (unchanged screens)
-- `backend/` – the FastAPI app; `lib/localdb.py` (local database), `lib/llm.py` / `lib/voice.py` (direct AI calls), `desktop_server.py` (entry point), `soc-backend.spec` (PyInstaller)
-- `electron/` – the Windows window, Settings screen, camera/mic permissions, starts/stops the engine
-- `.github/workflows/build-windows.yml` – cloud build; `build-windows.bat` – local build
+**Anthropic:** [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) (also needs credit added).
+
+Never share your key with anyone. CyberHire only sends it to OpenAI / Anthropic.
+
+## Windows: first start
+1. Run the installer. If Windows shows "Windows protected your PC", click **More info → Run anyway** (the app isn't code-signed).
+2. The Settings window opens. Click **Paste** next to the OpenAI key, then **Test**, then **Save & restart engine**.
+3. Sign up with any email and password. It's a local account that exists only on your PC. Then start an interview.
+4. Camera or mic not working? Go to Windows **Settings → Privacy & security → Camera** and **Microphone**, and turn on
+   "Let desktop apps access…".
+
+Your interviews, reports and recordings are saved in `%APPDATA%\CyberHire` (App menu → *Open data folder*).
+
+## Android: first start
+1. Download `CyberHire.apk` on your phone and open it. Allow installs from that app when Android asks.
+2. If Play Protect warns you, tap **More details → Install anyway** (the app isn't from the Play Store).
+3. Open CyberHire and allow **Camera** and **Microphone**.
+4. Settings opens: tap **Paste**, then **Test**, then **Save**.
+
+Everything is saved only on your phone. New versions install over the old one and keep your history.
+
+## What it costs
+CyberHire itself costs nothing. The AI company charges your key per use. A typical full interview with voices costs
+roughly $0.05–$0.20; typed-only practice costs less.
+
+## For developers
+- `frontend/`: React screens
+- `backend/`: FastAPI engine with a built-in local database (`lib/localdb.py`) and direct AI calls (`lib/llm.py`, `lib/voice.py`)
+- `electron/`: the Windows app window, Settings screen, and camera/mic permissions
+- `android-app/`: the standalone Android app (Capacitor)
+- `.github/workflows/`: cloud builds for the Windows `.exe` and the Android `.apk` (every push to `main` publishes a release)
+- `build-windows.bat`: build the Windows app locally (needs Node.js 22 and Python 3.12)

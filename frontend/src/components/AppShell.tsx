@@ -45,18 +45,11 @@ function NavItems({ onNavigate, admin }: { onNavigate?: () => void; admin: boole
   );
 }
 
-function trialLeft(until: string | null): string {
-  if (!until) return "";
-  const hrs = Math.max(0, (new Date(until).getTime() - Date.now()) / 36e5);
-  return hrs >= 24 ? `${Math.ceil(hrs / 24)}D LEFT` : `${Math.ceil(hrs)}H LEFT`;
-}
-
 export default function AppShell({ children }: { children: ReactNode }) {
   const { data: me } = useMe();
   const qc = useQueryClient();
   const nav = useNavigate();
   const [open, setOpen] = useState(false);
-  const { data: billing } = useQuery({ queryKey: ["billing"], queryFn: () => apiGet<BillingStatus>("/billing/status"), enabled: !!me });
   const logout = async () => {
     await apiPost("/auth/logout").catch(() => undefined);
     clearToken();
@@ -78,15 +71,6 @@ export default function AppShell({ children }: { children: ReactNode }) {
             <NavItems admin={me?.role === "admin"} />
           </nav>
           <div className="ml-auto flex items-center gap-2">
-            {billing && (billing.is_pro ? (
-              <Link to="/pricing" className="rounded-md border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 font-mono text-[10px] tracking-wider text-sky-300" data-testid="nav-pro-badge">PRO</Link>
-            ) : billing.on_trial ? (
-              <Link to="/pricing" className="rounded-md border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 font-mono text-[10px] tracking-wider text-amber-300 transition-colors hover:bg-amber-400/20" data-testid="nav-trial-badge">
-                TRIAL · {trialLeft(billing.trial_until)}
-              </Link>
-            ) : (
-              <Link to="/pricing" className={cn(buttonVariants({ size: "sm", variant: "secondary" }))} data-testid="nav-upgrade-button">Subscribe</Link>
-            ))}
             <Link to="/interview/new" className={cn(buttonVariants({ size: "sm" }), "hidden sm:inline-flex")} data-testid="header-start-interview">
               <Plus className="size-3.5" /> New interview
             </Link>
