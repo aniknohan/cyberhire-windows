@@ -1,0 +1,1002 @@
+[
+{
+"section": "Splunk",
+"n": 1,
+"text": "Tell me about your experience using Splunk in a SOC environment."
+},
+{
+"section": "Splunk",
+"n": 2,
+"text": "What is Splunk, and why is it useful for a security analyst?"
+},
+{
+"section": "Splunk",
+"n": 3,
+"text": "What is the difference between Splunk Enterprise and Splunk Enterprise Security?"
+},
+{
+"section": "Splunk",
+"n": 4,
+"text": "What is an index in Splunk?"
+},
+{
+"section": "Splunk",
+"n": 5,
+"text": "What is a sourcetype, and why is assigning the correct sourcetype important?"
+},
+{
+"section": "Splunk",
+"n": 6,
+"text": "What is a source in Splunk?"
+},
+{
+"section": "Splunk",
+"n": 7,
+"text": "What is a host field in Splunk?"
+},
+{
+"section": "Splunk",
+"n": 8,
+"text": "Walk me through how you would search for failed Windows logins in Splunk."
+},
+{
+"section": "Splunk",
+"n": 9,
+"text": "How would you identify repeated failed logins followed by a successful login?"
+},
+{
+"section": "Splunk",
+"n": 10,
+"text": "What is SPL?"
+},
+{
+"section": "Splunk",
+"n": 11,
+"text": "Explain the difference between search and where in SPL."
+},
+{
+"section": "Splunk",
+"n": 12,
+"text": "What does the stats command do?"
+},
+{
+"section": "Splunk",
+"n": 13,
+"text": "When would you use timechart?"
+},
+{
+"section": "Splunk",
+"n": 14,
+"text": "What does eval do?"
+},
+{
+"section": "Splunk",
+"n": 15,
+"text": "What is the purpose of fields and table commands?"
+},
+{
+"section": "Splunk",
+"n": 16,
+"text": "How do you use sort and dedup during an investigation?"
+},
+{
+"section": "Splunk",
+"n": 17,
+"text": "What is rex, and when would you use it?"
+},
+{
+"section": "Splunk",
+"n": 18,
+"text": "What is a lookup table in Splunk?"
+},
+{
+"section": "Splunk",
+"n": 19,
+"text": "How would you enrich an alert with threat-intelligence data?"
+},
+{
+"section": "Splunk",
+"n": 20,
+"text": "What is a Splunk correlation search?"
+},
+{
+"section": "Splunk",
+"n": 21,
+"text": "What is a notable event in Splunk Enterprise Security?"
+},
+{
+"section": "Splunk",
+"n": 22,
+"text": "How would you investigate a high-severity notable event?"
+},
+{
+"section": "Splunk",
+"n": 23,
+"text": "How would you search for activity from a specific IP address across multiple log sources?"
+},
+{
+"section": "Splunk",
+"n": 24,
+"text": "How would you find all events associated with a particular username?"
+},
+{
+"section": "Splunk",
+"n": 25,
+"text": "How would you investigate suspicious PowerShell activity in Splunk?"
+},
+{
+"section": "Splunk",
+"n": 26,
+"text": "How would you search for encoded PowerShell commands?"
+},
+{
+"section": "Splunk",
+"n": 27,
+"text": "How would you investigate a password-spraying attack using Splunk?"
+},
+{
+"section": "Splunk",
+"n": 28,
+"text": "How would you investigate possible brute-force activity?"
+},
+{
+"section": "Splunk",
+"n": 29,
+"text": "How would you use Splunk to investigate an impossible-travel alert?"
+},
+{
+"section": "Splunk",
+"n": 30,
+"text": "How would you investigate suspicious DNS queries?"
+},
+{
+"section": "Splunk",
+"n": 31,
+"text": "How would you use Splunk to identify connections to known malicious IP addresses?"
+},
+{
+"section": "Splunk",
+"n": 32,
+"text": "How would you investigate unusually large outbound data transfers?"
+},
+{
+"section": "Splunk",
+"n": 33,
+"text": "How would you search for suspicious process creation events?"
+},
+{
+"section": "Splunk",
+"n": 34,
+"text": "How would you investigate a process such as Word spawning PowerShell?"
+},
+{
+"section": "Splunk",
+"n": 35,
+"text": "How would you search for lateral movement using Windows authentication logs?"
+},
+{
+"section": "Splunk",
+"n": 36,
+"text": "How would you use Splunk to investigate RDP activity?"
+},
+{
+"section": "Splunk",
+"n": 37,
+"text": "How would you investigate SMB activity with Splunk?"
+},
+{
+"section": "Splunk",
+"n": 38,
+"text": "How would you detect possible account lockout patterns?"
+},
+{
+"section": "Splunk",
+"n": 39,
+"text": "What is a Splunk dashboard, and what would you put on a SOC dashboard?"
+},
+{
+"section": "Splunk",
+"n": 40,
+"text": "What is an alert in Splunk, and how would you tune one?"
+},
+{
+"section": "Splunk",
+"n": 41,
+"text": "How do you reduce false positives in a Splunk detection?"
+},
+{
+"section": "Splunk",
+"n": 42,
+"text": "What are accelerated data models?"
+},
+{
+"section": "Splunk",
+"n": 43,
+"text": "What is the Common Information Model (CIM), and why does it matter?"
+},
+{
+"section": "Splunk",
+"n": 44,
+"text": "What is tstats, and why can it be faster than a normal search?"
+},
+{
+"section": "Splunk",
+"n": 45,
+"text": "How would you troubleshoot a log source that suddenly stopped appearing in Splunk?"
+},
+{
+"section": "Splunk",
+"n": 46,
+"text": "What would you check if a Splunk search returned no results when you expected data?"
+},
+{
+"section": "Splunk",
+"n": 47,
+"text": "How would you validate that timestamps are being parsed correctly?"
+},
+{
+"section": "Splunk",
+"n": 48,
+"text": "How would you build a detection for a new threat technique?"
+},
+{
+"section": "Splunk",
+"n": 49,
+"text": "How would you map a Splunk detection to MITRE ATT&CK?"
+},
+{
+"section": "Splunk",
+"n": 50,
+"text": "Final scenario: You see failed logins, a successful login, PowerShell execution, and an outbound connection to a suspicious IP. Walk me through how you would investigate and correlate the activity in Splunk."
+},
+{
+"section": "Wireshark",
+"n": 51,
+"text": "Tell me about your experience using Wireshark."
+},
+{
+"section": "Wireshark",
+"n": 52,
+"text": "What is Wireshark, and how does a SOC analyst use it?"
+},
+{
+"section": "Wireshark",
+"n": 53,
+"text": "What is a packet capture?"
+},
+{
+"section": "Wireshark",
+"n": 54,
+"text": "What is the difference between a capture filter and a display filter?"
+},
+{
+"section": "Wireshark",
+"n": 55,
+"text": "How would you filter traffic for a specific IP address?"
+},
+{
+"section": "Wireshark",
+"n": 56,
+"text": "How would you filter for a specific TCP port?"
+},
+{
+"section": "Wireshark",
+"n": 57,
+"text": "How would you display only DNS traffic?"
+},
+{
+"section": "Wireshark",
+"n": 58,
+"text": "How would you display only HTTP traffic?"
+},
+{
+"section": "Wireshark",
+"n": 59,
+"text": "How would you display TCP SYN packets?"
+},
+{
+"section": "Wireshark",
+"n": 60,
+"text": "How would you identify a TCP three-way handshake in Wireshark?"
+},
+{
+"section": "Wireshark",
+"n": 61,
+"text": "What do SYN, SYN-ACK, ACK, FIN, and RST flags mean?"
+},
+{
+"section": "Wireshark",
+"n": 62,
+"text": "How would you identify a failed TCP connection?"
+},
+{
+"section": "Wireshark",
+"n": 63,
+"text": "What is TCP retransmission, and what can cause it?"
+},
+{
+"section": "Wireshark",
+"n": 64,
+"text": "What does a TCP reset tell you?"
+},
+{
+"section": "Wireshark",
+"n": 65,
+"text": "How would you follow a TCP stream?"
+},
+{
+"section": "Wireshark",
+"n": 66,
+"text": "When is Follow TCP Stream useful during an investigation?"
+},
+{
+"section": "Wireshark",
+"n": 67,
+"text": "How would you identify the client and server in a packet capture?"
+},
+{
+"section": "Wireshark",
+"n": 68,
+"text": "How would you investigate suspicious DNS traffic?"
+},
+{
+"section": "Wireshark",
+"n": 69,
+"text": "What would unusually long DNS queries make you consider?"
+},
+{
+"section": "Wireshark",
+"n": 70,
+"text": "How could DNS tunneling appear in a packet capture?"
+},
+{
+"section": "Wireshark",
+"n": 71,
+"text": "How would you identify DNS responses for a suspicious domain?"
+},
+{
+"section": "Wireshark",
+"n": 72,
+"text": "How would you investigate an HTTP request in Wireshark?"
+},
+{
+"section": "Wireshark",
+"n": 73,
+"text": "What information can you see in unencrypted HTTP traffic?"
+},
+{
+"section": "Wireshark",
+"n": 74,
+"text": "Why can't you normally read HTTPS payloads directly in Wireshark?"
+},
+{
+"section": "Wireshark",
+"n": 75,
+"text": "What information can still be useful when examining encrypted TLS traffic?"
+},
+{
+"section": "Wireshark",
+"n": 76,
+"text": "What is the TLS handshake?"
+},
+{
+"section": "Wireshark",
+"n": 77,
+"text": "How would you identify the server name requested during a TLS connection?"
+},
+{
+"section": "Wireshark",
+"n": 78,
+"text": "What is ARP, and what does normal ARP traffic look like?"
+},
+{
+"section": "Wireshark",
+"n": 79,
+"text": "What might indicate ARP spoofing?"
+},
+{
+"section": "Wireshark",
+"n": 80,
+"text": "How would you investigate ICMP traffic?"
+},
+{
+"section": "Wireshark",
+"n": 81,
+"text": "What could repeated ICMP requests indicate?"
+},
+{
+"section": "Wireshark",
+"n": 82,
+"text": "How would you identify port-scanning behavior in a packet capture?"
+},
+{
+"section": "Wireshark",
+"n": 83,
+"text": "What might a SYN scan look like in Wireshark?"
+},
+{
+"section": "Wireshark",
+"n": 84,
+"text": "How would you distinguish normal web browsing from suspicious beaconing?"
+},
+{
+"section": "Wireshark",
+"n": 85,
+"text": "What network patterns could suggest command-and-control traffic?"
+},
+{
+"section": "Wireshark",
+"n": 86,
+"text": "How would you investigate a host connecting to the same destination every 60 seconds?"
+},
+{
+"section": "Wireshark",
+"n": 87,
+"text": "What could unusually large outbound transfers indicate?"
+},
+{
+"section": "Wireshark",
+"n": 88,
+"text": "How would you investigate possible data exfiltration in a packet capture?"
+},
+{
+"section": "Wireshark",
+"n": 89,
+"text": "What are source and destination MAC addresses used for?"
+},
+{
+"section": "Wireshark",
+"n": 90,
+"text": "How do IP addresses, MAC addresses, and ports work together in packet analysis?"
+},
+{
+"section": "Wireshark",
+"n": 91,
+"text": "How would you identify DHCP traffic?"
+},
+{
+"section": "Wireshark",
+"n": 92,
+"text": "What is the DHCP DORA process?"
+},
+{
+"section": "Wireshark",
+"n": 93,
+"text": "How would you identify SMB traffic in Wireshark?"
+},
+{
+"section": "Wireshark",
+"n": 94,
+"text": "What might suspicious SMB activity look like?"
+},
+{
+"section": "Wireshark",
+"n": 95,
+"text": "How would you identify RDP-related network traffic?"
+},
+{
+"section": "Wireshark",
+"n": 96,
+"text": "How would you use Statistics, Conversations, and Endpoints during an investigation?"
+},
+{
+"section": "Wireshark",
+"n": 97,
+"text": "How would you quickly identify the top talkers in a large packet capture?"
+},
+{
+"section": "Wireshark",
+"n": 98,
+"text": "You receive a 5 GB PCAP. How would you approach it without manually reading every packet?"
+},
+{
+"section": "Wireshark",
+"n": 99,
+"text": "How would you export an object or file from a packet capture when appropriate?"
+},
+{
+"section": "Wireshark",
+"n": 100,
+"text": "Final scenario: A workstation may be infected. You receive a PCAP containing DNS, HTTP/TLS, and SMB traffic. Walk me through how you would use Wireshark to identify the suspicious host, possible C2 activity, and lateral movement."
+},
+{
+"section": "Nmap",
+"n": 101,
+"text": "Tell me about your experience using Nmap."
+},
+{
+"section": "Nmap",
+"n": 102,
+"text": "What is Nmap, and why is it useful in cybersecurity?"
+},
+{
+"section": "Nmap",
+"n": 103,
+"text": "What is the difference between host discovery and port scanning?"
+},
+{
+"section": "Nmap",
+"n": 104,
+"text": "How would you scan a single authorized host for common TCP ports?"
+},
+{
+"section": "Nmap",
+"n": 105,
+"text": "What is a TCP SYN scan?"
+},
+{
+"section": "Nmap",
+"n": 106,
+"text": "What is a TCP connect scan?"
+},
+{
+"section": "Nmap",
+"n": 107,
+"text": "What is the difference between -sS and -sT?"
+},
+{
+"section": "Nmap",
+"n": 108,
+"text": "What is a UDP scan, and why can UDP scanning be slower?"
+},
+{
+"section": "Nmap",
+"n": 109,
+"text": "What does it mean when Nmap reports a port as open?"
+},
+{
+"section": "Nmap",
+"n": 110,
+"text": "What does closed mean?"
+},
+{
+"section": "Nmap",
+"n": 111,
+"text": "What does filtered mean?"
+},
+{
+"section": "Nmap",
+"n": 112,
+"text": "What does open|filtered mean?"
+},
+{
+"section": "Nmap",
+"n": 113,
+"text": "A host does not respond to ping. Does that prove it is offline?"
+},
+{
+"section": "Nmap",
+"n": 114,
+"text": "When might you use -Pn?"
+},
+{
+"section": "Nmap",
+"n": 115,
+"text": "How would you scan all TCP ports on an authorized target?"
+},
+{
+"section": "Nmap",
+"n": 116,
+"text": "What does -p- do?"
+},
+{
+"section": "Nmap",
+"n": 117,
+"text": "How would you scan only selected ports?"
+},
+{
+"section": "Nmap",
+"n": 118,
+"text": "What does service/version detection do?"
+},
+{
+"section": "Nmap",
+"n": 119,
+"text": "What does -sV do?"
+},
+{
+"section": "Nmap",
+"n": 120,
+"text": "What is OS detection in Nmap?"
+},
+{
+"section": "Nmap",
+"n": 121,
+"text": "What does -O attempt to determine?"
+},
+{
+"section": "Nmap",
+"n": 122,
+"text": "What is the Nmap Scripting Engine?"
+},
+{
+"section": "Nmap",
+"n": 123,
+"text": "What are NSE scripts used for?"
+},
+{
+"section": "Nmap",
+"n": 124,
+"text": "How would you use default NSE scripts during an authorized assessment?"
+},
+{
+"section": "Nmap",
+"n": 125,
+"text": "What does -sC do?"
+},
+{
+"section": "Nmap",
+"n": 126,
+"text": "What is the difference between discovery, enumeration, and vulnerability validation?"
+},
+{
+"section": "Nmap",
+"n": 127,
+"text": "You find ports 22, 80, and 445 open. What would you investigate next?"
+},
+{
+"section": "Nmap",
+"n": 128,
+"text": "You find port 3389 open. What does that tell you?"
+},
+{
+"section": "Nmap",
+"n": 129,
+"text": "You find port 53 open. What would you investigate?"
+},
+{
+"section": "Nmap",
+"n": 130,
+"text": "You find ports 80 and 443 open. What would your next enumeration steps be?"
+},
+{
+"section": "Nmap",
+"n": 131,
+"text": "You find port 445 open on many internal hosts. How would you prioritize your investigation?"
+},
+{
+"section": "Nmap",
+"n": 132,
+"text": "How would you save Nmap results for later analysis?"
+},
+{
+"section": "Nmap",
+"n": 133,
+"text": "What is normal, grepable, and XML output?"
+},
+{
+"section": "Nmap",
+"n": 134,
+"text": "Why is XML output useful for automation?"
+},
+{
+"section": "Nmap",
+"n": 135,
+"text": "How would you compare Nmap results from two different points in time?"
+},
+{
+"section": "Nmap",
+"n": 136,
+"text": "How would you scan an authorized subnet?"
+},
+{
+"section": "Nmap",
+"n": 137,
+"text": "What is CIDR notation, and how is it used with Nmap?"
+},
+{
+"section": "Nmap",
+"n": 138,
+"text": "How would you identify live hosts in an internal network?"
+},
+{
+"section": "Nmap",
+"n": 139,
+"text": "What factors can make Nmap results inaccurate?"
+},
+{
+"section": "Nmap",
+"n": 140,
+"text": "How can firewalls affect scan results?"
+},
+{
+"section": "Nmap",
+"n": 141,
+"text": "How can IDS/IPS systems affect or detect scanning?"
+},
+{
+"section": "Nmap",
+"n": 142,
+"text": "Why should you consider scan timing in a production environment?"
+},
+{
+"section": "Nmap",
+"n": 143,
+"text": "What are Nmap timing templates?"
+},
+{
+"section": "Nmap",
+"n": 144,
+"text": "Why can aggressive scanning be risky?"
+},
+{
+"section": "Nmap",
+"n": 145,
+"text": "What does -A enable, and why should you use it thoughtfully?"
+},
+{
+"section": "Nmap",
+"n": 146,
+"text": "How would you verify an Nmap finding manually?"
+},
+{
+"section": "Nmap",
+"n": 147,
+"text": "How can a SOC analyst use Nmap defensively?"
+},
+{
+"section": "Nmap",
+"n": 148,
+"text": "How could Nmap help validate network segmentation?"
+},
+{
+"section": "Nmap",
+"n": 149,
+"text": "What would you do if Nmap identified an unexpected service on a critical server?"
+},
+{
+"section": "Nmap",
+"n": 150,
+"text": "Final scenario: You are authorized to assess an internal subnet. Explain how you would use Nmap from host discovery through port scanning, service enumeration, prioritization, validation, and documentation without unnecessarily disrupting production."
+},
+{
+"section": "Active Directory",
+"n": 151,
+"text": "Explain Active Directory as if you were speaking to a new SOC analyst."
+},
+{
+"section": "Active Directory",
+"n": 152,
+"text": "What is a domain?"
+},
+{
+"section": "Active Directory",
+"n": 153,
+"text": "What is a domain controller?"
+},
+{
+"section": "Active Directory",
+"n": 154,
+"text": "What is a forest?"
+},
+{
+"section": "Active Directory",
+"n": 155,
+"text": "What is an organizational unit (OU)?"
+},
+{
+"section": "Active Directory",
+"n": 156,
+"text": "What is the difference between a user account, computer account, and service account?"
+},
+{
+"section": "Active Directory",
+"n": 157,
+"text": "What is a security group?"
+},
+{
+"section": "Active Directory",
+"n": 158,
+"text": "What is Group Policy?"
+},
+{
+"section": "Active Directory",
+"n": 159,
+"text": "What is a Group Policy Object (GPO)?"
+},
+{
+"section": "Active Directory",
+"n": 160,
+"text": "How are GPOs related to domains and OUs?"
+},
+{
+"section": "Active Directory",
+"n": 161,
+"text": "What is LDAP, and how is it used in Active Directory?"
+},
+{
+"section": "Active Directory",
+"n": 162,
+"text": "What is Kerberos?"
+},
+{
+"section": "Active Directory",
+"n": 163,
+"text": "Walk me through Kerberos authentication at a high level."
+},
+{
+"section": "Active Directory",
+"n": 164,
+"text": "What is a Ticket Granting Ticket (TGT)?"
+},
+{
+"section": "Active Directory",
+"n": 165,
+"text": "What is a service ticket?"
+},
+{
+"section": "Active Directory",
+"n": 166,
+"text": "What is a Service Principal Name (SPN)?"
+},
+{
+"section": "Active Directory",
+"n": 167,
+"text": "What is NTLM, and why is it still relevant?"
+},
+{
+"section": "Active Directory",
+"n": 168,
+"text": "What is the difference between authentication and authorization in Active Directory?"
+},
+{
+"section": "Active Directory",
+"n": 169,
+"text": "What is the difference between a local account and a domain account?"
+},
+{
+"section": "Active Directory",
+"n": 170,
+"text": "What is the difference between local administrator and Domain Admin?"
+},
+{
+"section": "Active Directory",
+"n": 171,
+"text": "What is the purpose of the Domain Admins group?"
+},
+{
+"section": "Active Directory",
+"n": 172,
+"text": "What is the principle of least privilege, and why is it especially important in AD?"
+},
+{
+"section": "Active Directory",
+"n": 173,
+"text": "What is account lockout policy?"
+},
+{
+"section": "Active Directory",
+"n": 174,
+"text": "What is password policy in Active Directory?"
+},
+{
+"section": "Active Directory",
+"n": 175,
+"text": "What would you investigate if one account generated hundreds of failed logins?"
+},
+{
+"section": "Active Directory",
+"n": 176,
+"text": "What is password spraying from an Active Directory perspective?"
+},
+{
+"section": "Active Directory",
+"n": 177,
+"text": "What logs would you examine for suspicious domain authentication activity?"
+},
+{
+"section": "Active Directory",
+"n": 178,
+"text": "What are Windows Security Event Logs, and why are they important for AD monitoring?"
+},
+{
+"section": "Active Directory",
+"n": 179,
+"text": "What is Event ID 4624 commonly associated with?"
+},
+{
+"section": "Active Directory",
+"n": 180,
+"text": "What is Event ID 4625 commonly associated with?"
+},
+{
+"section": "Active Directory",
+"n": 181,
+"text": "What is Event ID 4688 useful for?"
+},
+{
+"section": "Active Directory",
+"n": 182,
+"text": "What is Kerberoasting?"
+},
+{
+"section": "Active Directory",
+"n": 183,
+"text": "What conditions make service accounts interesting to attackers performing Kerberoasting?"
+},
+{
+"section": "Active Directory",
+"n": 184,
+"text": "What is AS-REP roasting?"
+},
+{
+"section": "Active Directory",
+"n": 185,
+"text": "What is pass-the-hash?"
+},
+{
+"section": "Active Directory",
+"n": 186,
+"text": "What is credential dumping?"
+},
+{
+"section": "Active Directory",
+"n": 187,
+"text": "Why is LSASS important in credential-theft investigations?"
+},
+{
+"section": "Active Directory",
+"n": 188,
+"text": "What is lateral movement in an Active Directory environment?"
+},
+{
+"section": "Active Directory",
+"n": 189,
+"text": "How can RDP, SMB, WinRM, or remote administration tools be involved in lateral movement?"
+},
+{
+"section": "Active Directory",
+"n": 190,
+"text": "What is BloodHound, and how can defenders use it?"
+},
+{
+"section": "Active Directory",
+"n": 191,
+"text": "What is an Active Directory attack path?"
+},
+{
+"section": "Active Directory",
+"n": 192,
+"text": "What is DCSync?"
+},
+{
+"section": "Active Directory",
+"n": 193,
+"text": "Why would unexpected replication-related permissions be dangerous?"
+},
+{
+"section": "Active Directory",
+"n": 194,
+"text": "What is a Golden Ticket attack?"
+},
+{
+"section": "Active Directory",
+"n": 195,
+"text": "What is a Silver Ticket attack?"
+},
+{
+"section": "Active Directory",
+"n": 196,
+"text": "What is Kerberos delegation?"
+},
+{
+"section": "Active Directory",
+"n": 197,
+"text": "What is Active Directory Certificate Services (AD CS), and why should defenders monitor it?"
+},
+{
+"section": "Active Directory",
+"n": 198,
+"text": "What would you investigate if a normal user suddenly became a member of a privileged group?"
+},
+{
+"section": "Active Directory",
+"n": 199,
+"text": "How would you respond if you suspected a Domain Admin account had been compromised?"
+},
+{
+"section": "Active Directory",
+"n": 200,
+"text": "Final scenario: A user is phished, suspicious PowerShell runs, credentials are stolen, lateral movement occurs, and privileged AD activity follows. Walk me through the logs, evidence, containment decisions, and escalation steps you would use to investigate the attack."
+}
+]
