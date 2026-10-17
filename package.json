@@ -1,7 +1,7 @@
 {
   "name": "cyberhire-desktop",
   "productName": "CyberHire",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CyberHire \u2014 realistic AI interviews for SOC analyst and penetration tester roles, as a standalone Windows app.",
   "main": "electron/main.js",
   "author": "CyberHire",

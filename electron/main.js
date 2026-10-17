@@ -261,6 +261,22 @@ function showError(title, detail) {
   if (mainWindow && !mainWindow.isDestroyed()) mainWindow.loadURL(loadingPage(title, detail, true));
 }
 
+
+// Right-click menu for text: Electron shows none by default, so add Cut / Copy / Paste / Select all.
+function attachContextMenu(win) {
+  win.webContents.on("context-menu", (_e, params) => {
+    const items = [];
+    if (params.isEditable) {
+      items.push({ role: "undo", enabled: params.editFlags.canUndo }, { role: "redo", enabled: params.editFlags.canRedo }, { type: "separator" },
+        { role: "cut", enabled: params.editFlags.canCut }, { role: "copy", enabled: params.editFlags.canCopy },
+        { role: "paste", enabled: params.editFlags.canPaste }, { type: "separator" }, { role: "selectAll" });
+    } else if (params.selectionText && params.selectionText.trim()) {
+      items.push({ role: "copy" }, { role: "selectAll" });
+    }
+    if (items.length) Menu.buildFromTemplate(items).popup({ window: win });
+  });
+}
+
 function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 1280,
@@ -279,6 +295,7 @@ function createMainWindow() {
     },
   });
   mainWindow.once("ready-to-show", () => mainWindow.show());
+  attachContextMenu(mainWindow);
   mainWindow.loadURL(loadingPage("Starting CyberHire…", "Preparing your local interview engine."));
 
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
@@ -335,7 +352,10 @@ function openSettings() {
       sandbox: true,
     },
   });
-  settingsWindow.setMenu(null);
+  // Keep Ctrl+C / Ctrl+V / Ctrl+A working in the Settings window (its menu bar is hidden, not removed).
+  settingsWindow.setMenu(Menu.buildFromTemplate([{ label: "Edit", submenu: [{ role: "undo" }, { role: "redo" }, { type: "separator" }, { role: "cut" }, { role: "copy" }, { role: "paste" }, { role: "selectAll" }] }]));
+  settingsWindow.setMenuBarVisibility(false);
+  attachContextMenu(settingsWindow);
   settingsWindow.loadFile(path.join(__dirname, "settings.html"));
   settingsWindow.webContents.setWindowOpenHandler(({ url }) => {
     if (/^https:\/\//.test(url)) shell.openExternal(url);
@@ -356,6 +376,10 @@ function buildMenu() {
         { type: "separator" },
         { role: "quit", label: "Quit" },
       ],
+    },
+    {
+      label: "Edit",
+      submenu: [{ role: "undo" }, { role: "redo" }, { type: "separator" }, { role: "cut" }, { role: "copy" }, { role: "paste" }, { role: "selectAll" }],
     },
     {
       label: "View",
@@ -434,6 +458,7 @@ ipcMain.handle("settings:test", async (_e, which, key) => {
 });
 
 ipcMain.handle("settings:openData", () => shell.openPath(userData));
+ipcMain.handle("settings:clipboard", () => require("electron").clipboard.readText().trim());
 
 // ───────────────────────── app lifecycle ─────────────────────────
 
