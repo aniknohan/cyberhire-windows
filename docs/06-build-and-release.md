@@ -1,6 +1,6 @@
 # 06 — Build & Release
 
-Both apps are built in the cloud with GitHub Actions, so no local toolchain is needed to produce a release. Every push to `main` builds the affected app and publishes it on the [Releases](https://github.com/aniknohan/cyberhire-windows/releases) page.
+Both apps are built in the cloud with GitHub Actions, so no local toolchain is needed to produce a release. Every push to `main` builds the affected app and publishes it on the [Releases](https://github.com/aniknohan/cyberhire-windows-ai-lab/releases) page.
 
 ## Windows pipeline (`.github/workflows/build-windows.yml`)
 

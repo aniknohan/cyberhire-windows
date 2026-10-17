@@ -10,7 +10,7 @@ CyberHire is a free, offline-first desktop and mobile app for practising **SOC A
 
 The app runs **entirely on the user's own device**. There is no CyberHire server, account or subscription. Users bring their own OpenAI or Anthropic API key, and their interviews, recordings and reports never leave their computer or phone.
 
-> **Download:** [Latest release](https://github.com/aniknohan/cyberhire-windows/releases) has the Windows installer (`.exe`), a portable Windows build, and the Android app (`.apk`).
+> **Download:** [Latest release](https://github.com/aniknohan/cyberhire-windows-ai-lab/releases) has the Windows installer (`.exe`), a portable Windows build, and the Android app (`.apk`).
 
 ![CyberHire live interview](docs/screenshots/room.jpg)
 
@@ -103,7 +103,7 @@ Each question carries the expected concepts it is scored against, follow-ups the
 ## Repository Structure
 
 ```text
-cyberhire-windows/
+cyberhire-windows-ai-lab/
 ├── README.md
 ├── LICENSE
 ├── backend/                  # FastAPI interview engine (Python)
@@ -138,7 +138,7 @@ CyberHire is **free**. You only need your own AI key and pay the AI company dire
 
 **2. Install**
 
-| Device | File from [Releases](https://github.com/aniknohan/cyberhire-windows/releases) | Notes |
+| Device | File from [Releases](https://github.com/aniknohan/cyberhire-windows-ai-lab/releases) | Notes |
 |---|---|---|
 | Windows | `CyberHire-Setup-<version>.exe` | If Windows SmartScreen appears, click **More info → Run anyway** (the app isn't code-signed). |
 | Windows, no install | `CyberHire-Portable-<version>.exe` | Runs from any folder or USB drive. |
