@@ -15,7 +15,7 @@ Go to **[Releases](https://github.com/aniknohan/cyberhire-windows/releases)** an
 |---|---|
 | Windows (installs with Start menu + desktop shortcut) | `CyberHire-Setup-<version>.exe` |
 | Windows (no install, just run it) | `CyberHire-Portable-<version>.exe` |
-| Android phone | `CyberHire.apk` (from the newest **CyberHire for Android** release) |
+| Android phone | `CyberHire-Android.apk` |
 
 iPhone / iPad are not supported.
 
@@ -44,7 +44,7 @@ Never share your key with anyone. CyberHire only sends it to OpenAI / Anthropic.
 Your interviews, reports and recordings are saved in `%APPDATA%\CyberHire` (App menu → *Open data folder*).
 
 ## Android: first start
-1. Download `CyberHire.apk` on your phone and open it. Allow installs from that app when Android asks.
+1. Download `CyberHire-Android.apk` on your phone and open it. Allow installs from that app when Android asks.
 2. If Play Protect warns you, tap **More details → Install anyway** (the app isn't from the Play Store).
 3. Open CyberHire and allow **Camera** and **Microphone**.
 4. Settings opens: tap **Paste**, then **Test**, then **Save**.
