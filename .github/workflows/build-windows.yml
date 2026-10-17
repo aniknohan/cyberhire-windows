@@ -3,7 +3,7 @@ name: Build CyberHire for Windows
 on:
   push:
     branches: [main, master]
-    paths-ignore: ['android-app/**', '.github/workflows/build-android.yml']
+    paths-ignore: ['android-app/**', '.github/workflows/build-android.yml', 'docs/**', '**.md', 'LICENSE']
   workflow_dispatch:
 
 permissions:
