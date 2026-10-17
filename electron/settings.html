@@ -41,12 +41,12 @@
       <section>
         <h2>AI keys</h2>
         <label for="openaiKey">OpenAI API key <span style="color:var(--muted);font-weight:400">(required for voices and speech recognition)</span></label>
-        <div class="row"><input id="openaiKey" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false" /><button data-test="openai">Test</button></div>
+        <div class="row"><input id="openaiKey" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false" /><button data-paste="openaiKey" title="Paste from clipboard">Paste</button><button data-test="openai">Test</button></div>
         <div class="status" id="openaiStatus"></div>
         <div class="hint">Create one at <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com/api-keys</a>. Used for interviewer voices (gpt-4o-mini-tts), your answers' transcription (Whisper) and, if no Anthropic key is set, the interviewer (GPT-5.2).</div>
 
         <label for="anthropicKey">Anthropic API key <span style="color:var(--muted);font-weight:400">(optional, recommended)</span></label>
-        <div class="row"><input id="anthropicKey" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false" /><button data-test="anthropic">Test</button></div>
+        <div class="row"><input id="anthropicKey" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false" /><button data-paste="anthropicKey" title="Paste from clipboard">Paste</button><button data-test="anthropic">Test</button></div>
         <div class="status" id="anthropicStatus"></div>
         <div class="hint">With this key the interviewer and scoring use Claude Sonnet 4.5 (same as the website), with GPT-5.2 as fallback. Get one at <a href="https://console.anthropic.com/settings/keys" target="_blank">console.anthropic.com</a>.</div>
       </section>
@@ -106,6 +106,14 @@
       );
 
       $("openData").addEventListener("click", () => window.settingsApi.openData());
+      document.querySelectorAll("[data-paste]").forEach((btn) =>
+        btn.addEventListener("click", async () => {
+          const v = await window.settingsApi.readClipboard();
+          const st = $(btn.dataset.paste === "openaiKey" ? "openaiStatus" : "anthropicStatus");
+          if (v) { $(btn.dataset.paste).value = v; st.className = "status"; st.textContent = "Pasted. Click Test to check it."; }
+          else { st.className = "status bad"; st.textContent = "Nothing to paste — copy the key on the OpenAI / Anthropic page first."; }
+        })
+      );
       $("cancel").addEventListener("click", () => window.close());
       $("save").addEventListener("click", async () => {
         const out = { localPro: $("localPro").checked };
